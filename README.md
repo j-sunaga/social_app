@@ -1,24 +1,35 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Social Clone アプリ
 
-Things you may want to cover:
+### バージョン
+Ruby:2.6.3
 
-* Ruby version
+Rails:5.2.3
 
-* System dependencies
+### テーブル設計
 
-* Configuration
+#### timelines
+|culumn  |type  |
+|---|---|
+|id  |integer  |
+|title |string  |
+|content |text  |
+|image |string  |
+|user_id |integer |
 
-* Database creation
 
-* Database initialization
+#### users
+|culumn  |type  |
+|---|---|
+|id  |integer  |
+|name |string  |
+|email |string  |
+|password |password_digest |
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### friends
+|culumn  |type  |
+|---|---|
+|id  |integer  |
+|user_id |integer  |
+|friend_id |integer  |
