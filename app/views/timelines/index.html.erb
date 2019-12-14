@@ -19,7 +19,7 @@
         <td><%= timeline.title %></td>
         <td><%= timeline.content %></td>
         <td><%= timeline.image %></td>
-        <td><%= timeline.user %></td>
+        <td><%= timeline.user.name %></td>
         <td><%= link_to 'Show', timeline %></td>
         <td><%= link_to 'Edit', edit_timeline_path(timeline) %></td>
         <td><%= link_to 'Destroy', timeline, method: :delete, data: { confirm: 'Are you sure?' } %></td>
