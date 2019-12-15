@@ -11,8 +11,7 @@ class User < ApplicationRecord
                                   foreign_key: "friend_id",
                                   dependent: :destroy
 
-  has_many :following, through: :active_relationships,source: :user
-  has_many :followers, through: :passive_relationships,source: :friend
+  has_many :friend, through: :active_relationships,source: :friend
 
   #Validationの追加
   validates :name, presence: true, length: {maximum: 30}
@@ -21,7 +20,21 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, length: { minimum: 6 }
 
-  def follow(other_user)
-    following << other_user
+  def be_friend(other_user)
+     active_relationships.create(friend_id: other_user.id)
+     passive_relationships.create(user_id: other_user.id)
   end
+
+  # ユーザーを友達解除する
+ def un_friend(other_user)
+   active_relationships.find_by(friend_id: other_user.id).destroy
+   passive_relationships.find_by(user_id: other_user.id).destroy
+ end
+
+ # 現在のユーザーが友達だったらtrueを返す
+ def friend?(other_user)
+   friend.include?(other_user)
+ end
+
+
 end
