@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>タイトル:</strong>
   <%= @timeline.title %>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>内容:</strong>
   <%= @timeline.content %>
 </p>
 
 <p>
-  <strong>Image:</strong>
+  <strong>画像:</strong>
   <%= @timeline.image %>
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong>ユーザ:</strong>
   <%= @timeline.user %>
 </p>
 
-<%= link_to 'Edit', edit_timeline_path(@timeline) %> |
-<%= link_to 'Back', timelines_path %>
+<%= link_to '編集', edit_timeline_path(@timeline) %> |
+<%= link_to '戻る', timelines_path %>
