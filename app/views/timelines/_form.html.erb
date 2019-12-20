@@ -1,4 +1,4 @@
-<%= form_with(model: timeline, local: true) do |form| %>
+<%= form_with(model: timeline, local: true, url: choose_new_or_edit) do |form| %>
   <% if timeline.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(timeline.errors.count, "error") %> エラーが発生しました:</h2>
@@ -23,7 +23,11 @@
 
   <div class="field">
     <%= form.label :image %>
+    <!-- 確認画面から新規作成画面に戻った時に、 -->
+    <!-- アップロードした画像を表示させるための記述 -->
+    <%= image_tag(@timeline.image.url) if @timeline.image && @timeline.image.url %>
     <%= form.file_field :image %>
+    <%= form.hidden_field :image_cache %>
   </div>
 
   <div class="actions">

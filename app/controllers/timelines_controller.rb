@@ -14,7 +14,11 @@ class TimelinesController < ApplicationController
 
   # GET /timelines/new
   def new
-    @timeline = Timeline.new
+    if params[:back]
+      @timeline = current_user.timelines.build(timeline_params)
+    else
+      @timeline = Timeline.new
+    end
   end
 
   # GET /timelines/1/edit
@@ -61,6 +65,11 @@ class TimelinesController < ApplicationController
     end
   end
 
+  def confirm
+    @timeline = current_user.timelines.build(timeline_params)
+    render :new if @timeline.invalid?
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_timeline
@@ -69,6 +78,6 @@ class TimelinesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def timeline_params
-      params.require(:timeline).permit(:title, :content, :image, :user_id)
+      params.require(:timeline).permit(:title, :content, :image, :user_id,:image_cache)
     end
 end
