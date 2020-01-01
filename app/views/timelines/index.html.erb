@@ -1,33 +1,60 @@
 <p id="notice"><%= notice %></p>
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-2">
+    <div class="sidemenu">
+    <ul>
+      <a href="/timelines">
+      <li>
+        <span><%= image_tag('profile.jpg') %></span>
+        <div class="SideItem">
+          cat Taro
+        </div>
+      </li>
+      </a>
+      <a href="/timelines/new">
+      <li>
+        <span><%= image_tag('timeline.jpg') %></span>
+        <div class="SideItem">
+          タイムラインの投稿
+        </div>
+      </li>
+      </a>
+    </ul>
+    </div>
+  </div>
+  <div class="col-md-8">
 
-<h1>Timelines</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>タイトル</th>
-      <th>内容</th>
-      <th>画像</th>
-      <th>ユーザ</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @timelines.each do |timeline| %>
+    <table>
+    <thead>
       <tr>
-        <td><%= timeline.title %></td>
-        <td><%= timeline.content %></td>
-        <td><%= timeline.image %></td>
-        <td><%= timeline.user.name %></td>
-        <td><%= link_to '詳細', timeline %></td>
-        <td><%= link_to '編集', edit_timeline_path(timeline) %></td>
-        <td><%= link_to '削除', timeline, method: :delete, data: { confirm: '削除しますか？' } %></td>
+        <th>タイトル</th>
+        <th>内容</th>
+        <th>画像</th>
+        <th>ユーザ</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @timelines.each do |timeline| %>
+        <tr>
+          <td><%= timeline.title %></td>
+          <td><%= timeline.content %></td>
+          <td><%= timeline.image %></td>
+          <td><%= timeline.user.name %></td>
+          <td><%= link_to '詳細', timeline %></td>
+          <td><%= link_to '編集', edit_timeline_path(timeline) %></td>
+          <td><%= link_to '削除', timeline, method: :delete, data: { confirm: '削除しますか？' } %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-2">
+    <span>Cat Taro</span>
+    <span><a href="/users/show">View Profile</a></span>
+  </div>
 
-<%= link_to 'タイムラインの投稿', new_timeline_path %>
+  </div>
+  </div>
