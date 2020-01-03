@@ -2,6 +2,7 @@
 <div class="container-fluid">
 <div class="row">
   <div class="col-md-2">
+    <h4>サイドメニュー</h4>
     <div class="sidemenu">
     <ul>
       <a href="/timelines">
@@ -23,38 +24,39 @@
     </ul>
     </div>
   </div>
+
+  <!-- タイムライン表示画面 -->
   <div class="col-md-8">
-
-    <table>
-    <thead>
-      <tr>
-        <th>タイトル</th>
-        <th>内容</th>
-        <th>画像</th>
-        <th>ユーザ</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @timelines.each do |timeline| %>
-        <tr>
-          <td><%= timeline.title %></td>
-          <td><%= timeline.content %></td>
-          <td><%= timeline.image %></td>
-          <td><%= timeline.user.name %></td>
-          <td><%= link_to '詳細', timeline %></td>
-          <td><%= link_to '編集', edit_timeline_path(timeline) %></td>
-          <td><%= link_to '削除', timeline, method: :delete, data: { confirm: '削除しますか？' } %></td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
+      <h4>投稿一覧</h4>
+      <!-- つぶやき一覧を表示する -->
+      <div class = "timelines">
+      <% @timelines.each {|timeline| %>
+        <div class="timeline">
+          <div class="timeline-data clearfix">
+            <div class="profile-img">
+              <%= image_tag('profile.jpg') %>
+            </div>
+            <span class="timeline-title"><%= timeline.title %></span>
+            <span class="create-date"><%= timeline.created_at %></span>
+          </div>
+          <div class="timeline-content">
+           <%= timeline.content %>
+          </div>
+          <div class="timeline-img">
+            <img src="<%=timeline.image%>" alt="image" class="timeline-image">
+          </div>
+          <div class="timeline-edit clearfix">
+            <%= link_to '詳細', timeline_path(timeline.id) %>
+            <%= link_to '編集', edit_timeline_path(timeline.id),data: { confirm: '本当に編集していいですか？' }  %>
+            <%= link_to '削除', timeline_path(timeline.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
+          </div>
+        </div>
+      <% } %>
+      </div>
   </div>
   <div class="col-md-2">
     <span>Cat Taro</span>
     <span><a href="/users/show">View Profile</a></span>
   </div>
-
   </div>
   </div>
