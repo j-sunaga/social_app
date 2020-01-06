@@ -20,12 +20,16 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, length: { minimum: 6 }
 
+  #Image
+  mount_uploader :image, ImageUploader
+
+  # 友達追加
   def be_friend(other_user)
      active_relationships.create(friend_id: other_user.id)
      passive_relationships.create(user_id: other_user.id)
   end
 
-  # ユーザーを友達解除する
+  #友達解除する
  def un_friend(other_user)
    active_relationships.find_by(friend_id: other_user.id).destroy
    passive_relationships.find_by(user_id: other_user.id).destroy
