@@ -54,9 +54,30 @@
       <% } %>
       </div>
   </div>
+
+  <!-- 友達リスト表示 -->
   <div class="col-md-2">
-    <span>Cat Taro</span>
-    <span><a href="/users/show">View Profile</a></span>
+    <h4>友達リスト</h4>
+    <div class="sidemenu">
+    <ul>
+      <% @users.each do |user| %>
+
+        <% if current_user.id == user.id then %>
+          <% next %>
+        <% end %>
+
+        <a href="/users/<%=user.id%>">
+        <li>
+          <span><%= image_tag('profile.jpg') %></span>
+            <div class="SideItem">
+                <%= user.name %>
+              </div>
+        </li>
+        </a>
+      <% end %>
+    </ul>
+    </div>
+
   </div>
   </div>
   </div>

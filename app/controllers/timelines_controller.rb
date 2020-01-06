@@ -5,6 +5,7 @@ class TimelinesController < ApplicationController
   # GET /timelines.json
   def index
     @timelines = Timeline.all
+    @users = User.all
   end
 
   # GET /timelines/1
