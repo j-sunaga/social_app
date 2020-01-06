@@ -81,4 +81,5 @@ class TimelinesController < ApplicationController
     def timeline_params
       params.require(:timeline).permit(:title, :content, :image, :user_id,:image_cache)
     end
+
 end
