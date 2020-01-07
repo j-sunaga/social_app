@@ -1,5 +1,11 @@
-<h1>New Timeline</h1>
-
-<%= render 'form', timeline: @timeline %>
-
-<%= link_to '戻る', timelines_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="sign-up">
+        <h4>タイムライン投稿</h4>
+        <%= render 'form', timeline: @timeline %>
+        <%= link_to '戻る', timelines_path %>
+      </div>
+    </div>
+  </div>
+</div>

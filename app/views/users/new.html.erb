@@ -18,21 +18,33 @@
 
 <%= form_with(model: @user, local: true) do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <div class="input">
+    <%= f.text_field :name %>
+  </div>
 
   <%= f.label :email %>
-  <%= f.email_field :email %>
+  <div class="input">
+    <%= f.email_field :email %>
+  </div>
 
-  <%= f.label :image %>
-  <%= f.file_field :image %>
+  <%= f.label :"プロフィール画像" %>
+
+  <div class="user-image">
+    <%= f.file_field :image %>
+  </div>
 
   <%= f.label :password %>
-  <%= f.password_field :password %>
+  <div class="input">
+    <%= f.password_field :password %>
+  </div>
 
   <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-
-  <%= f.submit "Create my account" %>
+  <div class="input">
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="submit">
+    <%= f.submit "Create my account" %>
+  </div>
 <% end %>
 </div>
 </div>

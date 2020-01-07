@@ -1,24 +1,34 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>タイトル:</strong>
-  <%= @timeline.title %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="sign-up">
+        <p>
+          <span>タイトル:</span>
+          <%= @timeline.title %>
+        </p>
 
-<p>
-  <strong>内容:</strong>
-  <%= @timeline.content %>
-</p>
+        <p>
+          <span>内容:</span>
+          <%= @timeline.content %>
+        </p>
 
-<p>
-  <strong>画像:</strong>
-  <%= image_tag @timeline.image.url %>
-</p>
+        <div class="timeline-image">
+          <p>
+            <span>画像:</span>
+            <%= image_tag @timeline.image.url %>
+          </p>
+        </div>
+        <p>
+          <span>ユーザ:</span>
+          <%= @timeline.user.name %>
+        </p>
 
-<p>
-  <strong>ユーザ:</strong>
-  <%= @timeline.user %>
-</p>
+        <%= link_to '編集', edit_timeline_path(@timeline) %> |
+        <%= link_to '戻る', timelines_path %>
 
-<%= link_to '編集', edit_timeline_path(@timeline) %> |
-<%= link_to '戻る', timelines_path %>
+
+      </div>
+    </div>
+  </div>
+</div>

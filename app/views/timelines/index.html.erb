@@ -1,15 +1,14 @@
-<p id="notice"><%= notice %></p>
 <div class="container-fluid">
 <div class="row">
   <div class="col-md-2">
     <h4>サイドメニュー</h4>
     <div class="sidemenu">
     <ul>
-      <a href="/timelines">
+      <a href="/users/<%=current_user.id %>">
       <li>
         <span><%= image_tag('profile.jpg') %></span>
         <div class="SideItem">
-          cat Taro
+          <span><%= current_user.name %></span>
         </div>
       </li>
       </a>
@@ -30,17 +29,18 @@
       <h4>投稿一覧</h4>
       <!-- つぶやき一覧を表示する -->
       <div class = "timelines">
-      <% @timelines.each {|timeline| %>
+      <% current_user.timelines.each {|timeline| %>
         <div class="timeline">
           <div class="timeline-data clearfix">
             <div class="profile-img">
               <%= image_tag('profile.jpg') %>
             </div>
-            <span class="timeline-title"><%= timeline.title %></span>
+            <span class="timeline-title"><%= timeline.user.name %></span>
             <span class="create-date"><%= timeline.created_at %></span>
           </div>
           <div class="timeline-content">
-           <%= timeline.content %>
+           <p>タイトル : <%= timeline.title %></p>
+           <p>内容: <%= timeline.content %></p>
           </div>
           <div class="timeline-img">
             <img src="<%=timeline.image%>" alt="image" class="timeline-image">
