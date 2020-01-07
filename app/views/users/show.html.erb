@@ -5,9 +5,11 @@
 
       <h4>ユーザ情報</h1>
 
+      <% if @user.image.url then %>
       <div class="user-img">
       <%= image_tag @user.image.url %>
       </div>
+      <% end %>
 
       <p>ユーザ名 : <%= @user.name %></p>
       <p>Email : <%= @user.email %></p>
