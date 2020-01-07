@@ -1,5 +1,18 @@
-<h1>Detail</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="user-info">
 
-<%= @user.name %>
-<%= @user.email %>
-<%= image_tag @user.image.url %>
+      <h4>ユーザ情報</h1>
+
+      <div class="user-img">
+      <%= image_tag @user.image.url %>
+      </div>
+
+      <p>ユーザ名 : <%= @user.name %></p>
+      <p>Email : <%= @user.email %></p>
+
+      </div>
+    </div>
+  </div>
+</div>
