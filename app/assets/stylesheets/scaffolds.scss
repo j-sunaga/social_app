@@ -128,8 +128,13 @@ header .col-md-2{
 }
 //sign-up
 
-.sign-up{
+.sign-up, .user-info{
   text-align: center;
+}
+
+.user-img img{
+  width: 40px;
+  height: 40px;
 }
 
 
