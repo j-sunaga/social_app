@@ -68,7 +68,11 @@
 
         <a href="/users/<%=user.id%>">
         <li>
-          <span><%= image_tag('profile.jpg') %></span>
+          <% if user.image.url then %>
+          <span>
+            <%= image_tag user.image.url %>
+          </span>
+          <% end %>
             <div class="SideItem">
                 <%= user.name %>
               </div>
