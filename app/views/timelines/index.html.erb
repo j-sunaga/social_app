@@ -60,7 +60,7 @@
     <h4>友達リスト</h4>
     <div class="sidemenu">
     <ul>
-      <% @users.each do |user| %>
+      <% current_user.friend.each do |user| %>
 
         <% if current_user.id == user.id then %>
           <% next %>
