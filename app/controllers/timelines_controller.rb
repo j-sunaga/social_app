@@ -1,10 +1,10 @@
 class TimelinesController < ApplicationController
   before_action :set_timeline, only: [:show, :edit, :update, :destroy]
-
+  before_action :user_check, only: [:edit,:update,:destroy]
   # GET /timelines
   # GET /timelines.json
   def index
-    @timelines = Timeline.all
+    @timelines = Timeline.all.order(created_at: "DESC")
     @users = User.all
   end
 
