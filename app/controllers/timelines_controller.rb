@@ -82,4 +82,12 @@ class TimelinesController < ApplicationController
       params.require(:timeline).permit(:title, :content, :image, :user_id,:image_cache)
     end
 
+    #timelineを投稿したユーザとログインユーザが同一でない場合はトップページに戻るTrueを返す
+    def user_check
+      unless @timeline.user.id == current_user.id then
+        flash[:notice] = '編集・削除できません'
+        redirect_to timelines_path
+      end
+    end
+
 end
