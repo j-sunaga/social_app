@@ -29,7 +29,7 @@
       <h4>投稿一覧</h4>
       <!-- つぶやき一覧を表示する -->
       <div class = "timelines">
-      <% current_user.timelines.each {|timeline| %>
+      <% @timelines.each {|timeline| %>
         <div class="timeline">
           <div class="timeline-data clearfix">
             <div class="profile-img">
