@@ -47,8 +47,10 @@
           </div>
           <div class="timeline-edit clearfix">
             <%= link_to '詳細', timeline_path(timeline.id) %>
+          <% if timeline.user.id == current_user.id then %>
             <%= link_to '編集', edit_timeline_path(timeline.id),data: { confirm: '本当に編集していいですか？' }  %>
             <%= link_to '削除', timeline_path(timeline.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
+          <% end %>
           </div>
         </div>
       <% } %>
