@@ -1,3 +1,5 @@
+
+//common
 body {
   background-color: #e9ebee;
   color: #1d2129;
@@ -12,45 +14,29 @@ a {
 }
 ul{
   list-style: none;
+  padding-inline-start: 0px;
 }
 
-// header
+h2{
+  font-size: 12px;
+}
+
+
+
+//navbar
 
 .navbar{
   background-color: #4267b2;
 }
 
-.navber a{
+.navbar-text a,.navbar-text a:visited{
   color: white;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  font-size: 10px;
-}
-
-.navbar-nav>li>a{
-  color: white;
-}
-
-header .col-md-2{
-  height: 42px;
-  text-align: center;
-}
-
-.header p{
- padding-top: 8px;
- padding-bottom: 8px;
- font-size: 10px;
+  text-decoration: none;
 }
 
 .navbar img{
   width: 24px;
   height: 24px;
-  margin-top: 7px;
-  margin-bottom: 7px;
-}
-
-.navbar a,.navbar a:visited{
-  color: white;
 }
 
 // Sidemenu
@@ -186,11 +172,6 @@ header .col-md-2{
 
 //Default
 
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
 
 pre {
   background-color: #eee;
@@ -222,29 +203,20 @@ div {
   display: table;
 }
 
+//other
+
+
 #error_explanation {
-  width: 450px;
+  text-align: center;
+  font-size: 12px;
+  width: 300px;
   border: 2px solid black;
   padding: 7px 7px 0;
-  margin-bottom: 20px;
+  margin: auto;
   background-color: #f0f0f0;
-
-  h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px -7px 0;
-    background-color: #c00;
-    color: #fff;
-  }
-
-  ul li {
-    font-size: 12px;
-    list-style: square;
-  }
+  margin-bottom: 10px;
 }
 
-label {
-  display: block;
+.field{
+  margin: auto;
 }
