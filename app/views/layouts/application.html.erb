@@ -24,12 +24,19 @@
 
   		<div class="collapse navbar-collapse navbar-right" id="navbarEexample1">
   			<ul class="nav navbar-nav float-right">
-  				<li><a href="/timelines">タイムライン</a></li>
-  				<li ><a href="/timeline/new">新規投稿</a></li>
-  				<li ><a href="/relationships">利用者リスト</a></li>
-          <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
+          <% if current_user then %>
+          <p class="navbar-text"><%= link_to "#{current_user.name}", user_path(current_user.id) %></p>
+  				<li><p class="navbar-text"><%= link_to "タイムライン", timelines_path %></p></li>
+  				<li ><p class="navbar-text"><%= link_to "新規投稿", new_timeline_path %></p></li>
+  				<li ><p class="navbar-text"><%= link_to "利用者リスト", relationships_path %></p></li>
+          <li><p class="navbar-text"><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></p></li>
+          <% else %>
+          <li ><p class="navbar-text"><%= link_to "新規登録", new_user_path %></p></li>
+  				<li ><p class="navbar-text"><%= link_to "ログイン", new_session_path %></p></li>
+          <% end %>
+
   			</ul>
-        <p class="navbar-text"><%= link_to "#{current_user.name}", user_path(current_user.id) %></p>
+
   		</div>
   	</div>
   </nav>
