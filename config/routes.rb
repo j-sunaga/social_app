@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root :to => 'timelines'
+  
   resources :timelines do
     collection do
       post :confirm
