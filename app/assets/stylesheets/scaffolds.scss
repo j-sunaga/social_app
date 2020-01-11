@@ -170,40 +170,13 @@ h2{
 }
 
 
-//Default
-
-
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
-}
-
-
-th {
-  padding-bottom: 5px;
-}
-
-td {
-  padding: 0 5px 7px;
-}
-
-div {
-  &.field, &.actions {
-    margin-bottom: 10px;
-  }
-}
-
-#notice {
-  color: green;
-}
-
-.field_with_errors {
-  padding: 2px;
-  display: table;
-}
-
 //other
+.field_with_errors {
+    margin: auto;
+    padding: 2px;
+    display: table;
+}
+
 
 
 #error_explanation {
@@ -219,4 +192,5 @@ div {
 
 .field{
   margin: auto;
+  margin-bottom: 10px;
 }
