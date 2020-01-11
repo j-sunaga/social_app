@@ -1,14 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <div class="sign-up">
+      <div class="common-container">
 
-      <h4>タイムラインの編集</h4>
-
-      <%= render 'form', timeline: @timeline %>
-
-      <%= link_to '詳細', @timeline %> |
-      <%= link_to '戻る', timelines_path %>
+        <h4>タイムラインの編集</h4>
+        <%= render 'form', timeline: @timeline %>
+        <%= link_to '詳細', @timeline %> |
+        <%= link_to '戻る', timelines_path %>
+        
       </div>
     </div>
   </div>

@@ -9,7 +9,6 @@ class TimelinesController < ApplicationController
   end
 
   # GET /timelines/1
-  # GET /timelines/1.json
   def show
   end
 
@@ -27,7 +26,6 @@ class TimelinesController < ApplicationController
   end
 
   # POST /timelines
-  # POST /timelines.json
   def create
     @timeline = current_user.timelines.build(timeline_params)
 

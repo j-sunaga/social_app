@@ -2,11 +2,10 @@
   <% if timeline.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(timeline.errors.count, "error") %> エラーが発生しました:</h2>
-
       <ul>
-      <% timeline.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% timeline.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>

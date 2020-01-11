@@ -40,5 +40,4 @@ class User < ApplicationRecord
    friend.include?(other_user)
  end
 
-
 end

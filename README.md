@@ -15,7 +15,7 @@ Rails:5.2.3
 |id  |integer  |
 |title |string  |
 |content |text  |
-|image |string  |
+|image |text |
 |user_id |integer |
 
 
@@ -26,8 +26,10 @@ Rails:5.2.3
 |name |string  |
 |email |string  |
 |password |password_digest |
+|image  |text  |
 
-#### friends
+
+#### relationships
 |culumn  |type  |
 |---|---|
 |id  |integer  |

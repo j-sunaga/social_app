@@ -1,33 +1,30 @@
-
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <div class="sign-up">
+      <div class="common-container">
         <p>
           <span>タイトル:</span>
           <%= @timeline.title %>
         </p>
-
         <p>
           <span>内容:</span>
           <%= @timeline.content %>
         </p>
 
-        <div class="timeline-image">
-          <p>
-            <span>画像:</span>
-            <%= image_tag @timeline.image.url %>
-          </p>
-        </div>
+        <% if @timeline.image.url then %>
+          <div class="timeline-image">
+            <p>
+              <span>画像:</span>
+              <%= image_tag @timeline.image.url %>
+            </p>
+          </div>
+        <% end %>
         <p>
           <span>ユーザ:</span>
           <%= @timeline.user.name %>
         </p>
-
         <%= link_to '編集', edit_timeline_path(@timeline) %> |
         <%= link_to '戻る', timelines_path %>
-
-
       </div>
     </div>
   </div>

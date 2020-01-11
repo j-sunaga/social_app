@@ -21,8 +21,6 @@ h2{
   font-size: 12px;
 }
 
-
-
 //navbar
 
 .navbar{
@@ -52,23 +50,18 @@ h2{
   margin-right: 10px;
 }
 
-.sidemenu ul{
-  padding: 0px;
-}
-
 .sidemenu li{
   margin-bottom: 10px;
 }
 
-.SideItem{
+.sideitem{
   height: 28px;
 }
 
-
 .sidemenu a,.sidemenu a:visited{
   color: #1d2129;
+  text-decoration: none;
 }
-
 
 //TimeLine画面
 
@@ -98,6 +91,12 @@ h2{
   margin-right: 5px;
 }
 
+
+.timeline p{
+word-wrap: break-word;
+}
+
+
 .profile-img img{
   width: 30px;
   height: 30px;
@@ -125,11 +124,12 @@ h2{
   clear: both;
 }
 //sign-up
-
-.sign-up, .user-info{
+.common-container{
   text-align: center;
 }
-
+.common-container{
+word-wrap: break-word;
+}
 
 .relationship_table table{
   margin-left: auto;
@@ -169,6 +169,10 @@ h2{
   height: 40px;
 }
 
+//relationship
+.relationship_table td{
+text-align: left;
+}
 
 //other
 .field_with_errors {
@@ -176,8 +180,6 @@ h2{
     padding: 2px;
     display: table;
 }
-
-
 
 #error_explanation {
   text-align: center;
