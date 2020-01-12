@@ -41,7 +41,6 @@ class TimelinesController < ApplicationController
   end
 
   # PATCH/PUT /timelines/1
-  # PATCH/PUT /timelines/1.json
   def update
     respond_to do |format|
       if @timeline.update(timeline_params)
@@ -55,7 +54,6 @@ class TimelinesController < ApplicationController
   end
 
   # DELETE /timelines/1
-  # DELETE /timelines/1.json
   def destroy
     @timeline.destroy
     respond_to do |format|

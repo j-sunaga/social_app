@@ -10,6 +10,12 @@
         <% end %>
         <p>ユーザ名 : <%= @user.name %></p>
         <p>Email : <%= @user.email %></p>
+
+        <% if @user.id == current_user.id then %>
+        <%= link_to '編集', edit_user_path(@user) %> |
+        <% end %>
+        <%= link_to '戻る', timelines_path %>
+
       </div>
     </div>
   </div>
