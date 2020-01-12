@@ -6,15 +6,21 @@
         <ul>
           <a href="/users/<%=current_user.id %>">
             <li>
-              <span><img src="<%=current_user.image%>" alt=""></span>
-              <div class="SideItem">
+              <div class="sidemenu-img clearfix">
+                <% if current_user.image.url then %>
+                  <span><img src="<%=current_user.image%>" alt=""></span>
+                <% end %>
+              </div>
+              <div class="sideitem">
                 <span><%= current_user.name %></span>
               </div>
             </li>
           </a>
           <a href="/timelines/new">
             <li>
-              <span><%= image_tag('timeline.jpg') %></span>
+              <div class="sidemenu-img clearfix">
+                <span><%= image_tag('timeline.jpg') %></span>
+              </div>
               <div class="sideitem">
                 タイムラインの投稿
               </div>
@@ -69,10 +75,12 @@
 
             <a href="/users/<%=user.id%>">
               <li>
-                <% if user.image.url then %>
-                  <span><%= image_tag user.image.url %></span>
-                <% end %>
-                <div class="SideItem">
+                <div class="friend-img clearfix">
+                  <% if user.image.url then %>
+                    <%= image_tag user.image.url %>
+                  <% end %>
+                </div>
+                <div class="frien-name">
                   <%= user.name %>
                 </div>
               </li>

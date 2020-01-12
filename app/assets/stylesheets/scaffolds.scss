@@ -43,12 +43,6 @@ h2{
   color: #1d2129;
 }
 
-.sidemenu img{
-  width: 20px;
-  height: 20px;
-  float: left;
-  margin-right: 10px;
-}
 
 .sidemenu li{
   margin-bottom: 10px;
@@ -62,6 +56,21 @@ h2{
   color: #1d2129;
   text-decoration: none;
 }
+
+.sidemenu-img, .sidemenu-img img{
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.friend-img,.friend-img img{
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
 
 //TimeLine画面
 
