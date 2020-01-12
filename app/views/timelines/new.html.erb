@@ -1,11 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <div class="common-container">
         <h4>タイムライン投稿</h4>
         <%= render 'form', timeline: @timeline %>
-        <%= link_to '戻る', timelines_path %>
-      </div>
+        <a href="/timelines"><button class="btn btn-primary" type="submit">戻る</button></a>
     </div>
   </div>
 </div>

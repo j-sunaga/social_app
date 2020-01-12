@@ -1,32 +1,30 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <div class="common-container">
-        <p>
-          <span>タイトル:</span>
-          <%= @timeline.title %>
-        </p>
-        <p>
-          <span>内容:</span>
-          <%= @timeline.content %>
-        </p>
-
-        <% if @timeline.image.url then %>
-          <div class="timeline-image">
-            <p>
-              <span>画像:</span>
-              <%= image_tag @timeline.image.url %>
-            </p>
-          </div>
-        <% end %>
-        <p>
-          <span>ユーザ:</span>
-          <%= @timeline.user.name %>
-        </p>
-        <% if @timeline.user.id == current_user.id then %>
-        <%= link_to '編集', edit_timeline_path(@timeline) %> |
-        <% end %>
-        <%= link_to '戻る', timelines_path %>
+    <div class="col-md-8">
+        <div class = "timelines">
+          <div class="timeline">
+            <div class="timeline-data clearfix">
+              <div class="profile-img">
+                <img src="<%=@timeline.user.image%>" alt="">
+              </div>
+              <span class="timeline-title"><%= @timeline.user.name %></span>
+              <span class="create-date"><%= @timeline.created_at %></span>
+            </div>
+            <div class="timeline-content">
+              <p>タイトル : <%= @timeline.title %></p>
+              <p>内容: <%= @timeline.content %></p>
+            </div>
+              <div class="timeline-img">
+                <img src="<%=@timeline.image%>" alt="" class="timeline-image">
+              </div>
+            <div class="timeline-edit clearfix">
+              <%= link_to '詳細', timeline_path(@timeline.id) %>
+              <% if @timeline.user.id == current_user.id then %>
+                <%= link_to '編集', edit_timeline_path(@timeline.id),data: { confirm: '本当に編集していいですか？' }  %>
+                <%= link_to '削除', timeline_path(@timeline.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
+              <% end %>
+            </div>
+        </div>
       </div>
     </div>
   </div>

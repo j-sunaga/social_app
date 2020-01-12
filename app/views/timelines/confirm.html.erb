@@ -1,22 +1,48 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <div class="common-container">
         <h4>以下の内容で、送信する。</h4>
 
           <%= form_with(model: @timeline, url: timelines_path, local: true) do |form| %>
+
             <%= form.hidden_field :title %>
             <%= form.hidden_field :content %>
             <%= form.hidden_field :image %>
             <%= form.hidden_field :image_cache %>
 
-            <p>タイトル:<%= @timeline.title %></p>
-            <p>内容:<%= @timeline.content %></p>
-            <div class="timeline-image">
-              <p>画像:  <%= image_tag(@timeline.image.url) if @timeline.image && @timeline.image.url %></p>
+            <form>
+
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label>タイトル</label>
+                <input type="text" readonly class="form-control" name="timeline[title]" value="<%=@timeline.title%>">
+              </div>
             </div>
-            <p>ユーザ:<%= @timeline.user.name %></p>
-            <%= form.submit  "登録する" %>
+
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label>内容</label>
+                   <textarea readonly class="form-control" name="timeline[content]" rows="5"><%=@timeline.content%></textarea>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <label>画像</label>
+                <div class="img-fluid">
+                <%= image_tag(@timeline.image.url) if @timeline.image && @timeline.image.url %>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label>ユーザ名</label>
+                <input type="text" readonly class="form-control" name="timeline[title]" value="<%= @timeline.user.name %>">
+                </div>
+                </div>
+            <button type="submit" class="btn btn-primary" name="commit">投稿する</button>
           <% end %>
 
           <%= form_with(model:@timeline, url:new_timeline_path, local:true, method:"get") do |form| %>
@@ -24,9 +50,9 @@
             <%= form.hidden_field :content %>
             <%= form.hidden_field :image %>
             <%= form.hidden_field :image_cache %>
-            <%= form.submit "戻る", name: 'back' %>
+            <button type="submit" class="btn btn-primary" name="back">戻る</button>
           <% end %>
-      </div>
+          </form>
     </div>
   </div>
 </div>

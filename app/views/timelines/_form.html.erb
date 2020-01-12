@@ -10,26 +10,34 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <form>
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label>タイトル</label>
+        <input type="text" class="form-control" name="timeline[title]" value="<%=@timeline.title%>">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label>内容</label>
+        <textarea class="form-control" name="timeline[content]" rows="5"><%=@timeline.content%></textarea>
+      </div>
+    </div>
+
+    <div class="form-row">
+    <div class="timeline-image">
+      <div class="form-group">
+         <label>画像</label>
+        <!-- 確認画面から新規作成画面に戻った時に、 -->
+        <!-- アップロードした画像を表示させるための記述 -->
+        <%= image_tag(@timeline.image.url) if @timeline.image && @timeline.image.url %>
+        <%= form.file_field :image %>
+        <%= form.hidden_field :image_cache %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
-
-  <div class="timeline-image">
-    <%= form.label :image %>
-    <!-- 確認画面から新規作成画面に戻った時に、 -->
-    <!-- アップロードした画像を表示させるための記述 -->
-    <%= image_tag(@timeline.image.url) if @timeline.image && @timeline.image.url %>
-    <%= form.file_field :image %>
-    <%= form.hidden_field :image_cache %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <button type="submit" class="btn btn-primary" name="commit">投稿する</button>
+  </form>
 <% end %>
