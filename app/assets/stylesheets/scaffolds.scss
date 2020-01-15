@@ -77,7 +77,6 @@ h2{
 
 
 //TimeLine画面
-
 .timelines{
       margin-top: 0;
       margin-bottom: 10px;
@@ -102,6 +101,8 @@ h2{
   display: inline-block;
   float: left;
   margin-right: 5px;
+  text-decoration: none;
+  color: #1d2129;
 }
 
 
@@ -136,6 +137,13 @@ word-wrap: break-word;
   display: block;
   clear: both;
 }
+
+.img-fluid img{
+  width: 350px;
+  height: 350px;
+}
+
+
 //sign-up
 .common-container{
   text-align: center;
@@ -182,10 +190,26 @@ word-wrap: break-word;
   height: 40px;
 }
 
+//users
+
+.img-profile img{
+
+  width: 200px;
+  height: 200px;
+
+}
+
 //relationship
 .relationship_table td{
 text-align: left;
 }
+
+.relationship table {
+  table-layout: fixed;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
 
 //other
 .field_with_errors {
@@ -200,7 +224,6 @@ text-align: left;
   width: 300px;
   border: 2px solid black;
   padding: 7px 7px 0;
-  margin: auto;
   background-color: #f0f0f0;
   margin-bottom: 10px;
 }
