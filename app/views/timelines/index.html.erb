@@ -36,29 +36,29 @@
       <!-- つぶやき一覧を表示する -->
       <div class = "timelines">
         <% @timelines.each {|timeline| %>
-        <div class="timeline">
-          <div class="timeline-data clearfix">
-            <div class="profile-img">
-              <img src="<%=timeline.user.image%>" alt="">
+          <div class="timeline">
+            <div class="timeline-data clearfix">
+              <div class="profile-img">
+                <img src="<%=timeline.user.image%>" alt="">
+              </div>
+              <span class="timeline-title"><%= timeline.user.name %></span>
+              <span class="create-date"><%= timeline.created_at %></span>
             </div>
-            <span class="timeline-title"><%= timeline.user.name %></span>
-            <span class="create-date"><%= timeline.created_at %></span>
-          </div>
-          <div class="timeline-content">
-            <p>タイトル : <%= timeline.title %></p>
-            <p>内容: <%= timeline.content %></p>
-          </div>
-            <div class="timeline-img">
-              <img src="<%=timeline.image%>" alt="" class="timeline-image">
+            <div class="timeline-content">
+              <p>タイトル : <%= timeline.title %></p>
+              <p>内容: <%= timeline.content %></p>
             </div>
-          <div class="timeline-edit clearfix">
-            <%= link_to '詳細', timeline_path(timeline.id) %>
-            <% if timeline.user.id == current_user.id then %>
-              <%= link_to '編集', edit_timeline_path(timeline.id),data: { confirm: '本当に編集していいですか？' }  %>
-              <%= link_to '削除', timeline_path(timeline.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
-            <% end %>
+              <div class="timeline-img">
+                <img src="<%=timeline.image%>" alt="" class="timeline-image">
+              </div>
+            <div class="timeline-edit clearfix">
+              <%= link_to '詳細', timeline_path(timeline.id) %>
+              <% if timeline.user.id == current_user.id then %>
+                <%= link_to '編集', edit_timeline_path(timeline.id),data: { confirm: '本当に編集していいですか？' }  %>
+                <%= link_to '削除', timeline_path(timeline.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
+              <% end %>
+            </div>
           </div>
-        </div>
         <% } %>
       </div>
     </div>
@@ -90,4 +90,4 @@
       </div>
     </div>
   </div>
-  </div>
+</div>

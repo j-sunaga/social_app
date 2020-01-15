@@ -5,7 +5,7 @@
 
         <h4>ログイン</h4>
         <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
-            <%= f.label :email %>
+          <%= f.label :email %>
           <div class="input">
             <%= f.email_field :email %>
           </div>

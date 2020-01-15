@@ -26,17 +26,17 @@
     </div>
 
     <div class="form-row">
-    <div class="timeline-image">
-      <div class="form-group">
-         <label>画像</label>
-        <!-- 確認画面から新規作成画面に戻った時に、 -->
-        <!-- アップロードした画像を表示させるための記述 -->
-        <%= image_tag(@timeline.image.url) if @timeline.image && @timeline.image.url %>
-        <%= form.file_field :image %>
-        <%= form.hidden_field :image_cache %>
+      <div class="timeline-image">
+        <div class="form-group">
+           <label>画像</label>
+          <!-- 確認画面から新規作成画面に戻った時に、 -->
+          <!-- アップロードした画像を表示させるための記述 -->
+          <%= image_tag(@timeline.image.url) if @timeline.image && @timeline.image.url %>
+          <%= form.file_field :image %>
+          <%= form.hidden_field :image_cache %>
+        </div>
       </div>
     </div>
-  </div>
 
 
     <button type="submit" class="btn btn-primary" name="commit">投稿する</button>

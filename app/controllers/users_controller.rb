@@ -24,11 +24,11 @@ class UsersController < ApplicationController
 
   #アップデートアクション
   def update
-      if @user.update(user_params)
-        redirect_to user_path(@user.id), notice: "会員情報を変更しました。"
-      else
-        render :edit
-      end
+    if @user.update(user_params)
+      redirect_to user_path(@user.id), notice: "会員情報を変更しました。"
+    else
+      render :edit
+    end
   end
 
 
@@ -49,6 +49,5 @@ class UsersController < ApplicationController
       redirect_to timelines_path
     end
   end
-
 
 end

@@ -23,19 +23,19 @@ class TimelinesController < ApplicationController
 
   def create
     @timeline = current_user.timelines.build(timeline_params)
-      if @timeline.save
-        redirect_to timelines_path, notice: "タイムラインを投稿しました！"
-      else
-        render action: :new
-      end
+    if @timeline.save
+      redirect_to timelines_path, notice: "タイムラインを投稿しました！"
+    else
+      render action: :new
+    end
   end
 
   def update
-      if @timeline.update(timeline_params)
-        redirect_to timelines_path, notice: "タイムラインを編集しました！"
-      else
-        render :edit
-      end
+    if @timeline.update(timeline_params)
+      redirect_to timelines_path, notice: "タイムラインを編集しました！"
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -50,20 +50,20 @@ class TimelinesController < ApplicationController
 
   private
 
-    def set_timeline
-      @timeline = Timeline.find(params[:id])
-    end
+  def set_timeline
+    @timeline = Timeline.find(params[:id])
+  end
 
-    def timeline_params
-      params.require(:timeline).permit(:title, :content, :image, :user_id,:image_cache)
-    end
+  def timeline_params
+    params.require(:timeline).permit(:title, :content, :image, :user_id,:image_cache)
+  end
 
     #timelineを投稿したユーザとログインユーザが同一でない場合はトップページに戻るTrueを返す
-    def user_check
-      unless @timeline.user.id == current_user.id then
-        flash[:notice] = '編集・削除できません'
-        redirect_to timelines_path
-      end
+  def user_check
+    unless @timeline.user.id == current_user.id then
+      flash[:notice] = '編集・削除できません'
+      redirect_to timelines_path
     end
+  end
 
 end
