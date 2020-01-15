@@ -196,14 +196,13 @@ word-wrap: break-word;
   table-layout: fixed;
   margin-left: auto;
   margin-right: auto;
-  
+
 }
 
 .relationship_table td{
 text-align: left;
-width: 100px;
+word-wrap: break-word;
 }
-
 
 
 //other
