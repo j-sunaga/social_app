@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'timelines#index'
+  root to: 'sessions#new'
 
   resources :timelines do
     collection do
