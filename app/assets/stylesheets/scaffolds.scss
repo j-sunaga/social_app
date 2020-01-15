@@ -147,16 +147,8 @@ word-wrap: break-word;
 //sign-up
 .common-container{
   text-align: center;
+  word-wrap: break-word;
 }
-.common-container{
-word-wrap: break-word;
-}
-
-.relationship_table table{
-  margin-left: auto;
-  margin-right: auto;
-}
-
 
 .user-img img{
   width: 40px;
@@ -200,15 +192,18 @@ word-wrap: break-word;
 }
 
 //relationship
-.relationship_table td{
-text-align: left;
+.relationship_table table {
+  table-layout: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  
 }
 
-.relationship table {
-  table-layout: fixed;
-  word-break: break-all;
-  word-wrap: break-word;
+.relationship_table td{
+text-align: left;
+width: 100px;
 }
+
 
 
 //other
