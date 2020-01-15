@@ -1,22 +1,32 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="common-container">
-        <h4>ユーザ情報</h4>
-        <% if @user.image.url then %>
-          <div class="user-img">
-            <%= image_tag @user.image.url %>
+  <h4>ユーザ情報</h4>
+  <form>
+      <div class="row">
+        <div class="col-md-6">
+          <label>画像</label>
+          <div class="img-profile">
+          <%= image_tag(@user.image.url) if @user.image && @user.image.url %>
           </div>
-        <% end %>
-        <p>ユーザ名 : <%= @user.name %></p>
-        <p>Email : <%= @user.email %></p>
-
-        <% if @user.id == current_user.id then %>
-        <%= link_to '編集', edit_user_path(@user) %> |
-        <% end %>
-        <%= link_to '戻る', timelines_path %>
-
+        </div>
       </div>
-    </div>
-  </div>
+
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label>ユーザ名</label>
+          <input type="text" readonly class="form-control" name="user[name]" value="<%=@user.name%>">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label>Eメール</label>
+          <input type="text" readonly class="form-control" name="user[email]" value="<%=@user.email%>">
+        </div>
+      </div>
+
+      <% if @user.id == current_user.id then %>
+      <%= link_to '編集', edit_user_path(@user) %> |
+      <% end %>
+      <%= link_to '戻る', timelines_path %>
+  </form>
 </div>
