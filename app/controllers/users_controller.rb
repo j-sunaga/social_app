@@ -44,7 +44,7 @@ class UsersController < ApplicationController
 
   #ログインユーザが同一でない場合はトップページに戻るTrueを返す
   def user_check
-    unless @user.id == current_user.id then
+    unless @user.id == current_user.id
       flash[:notice] = '編集できません'
       redirect_to timelines_path
     end

@@ -60,7 +60,7 @@ class TimelinesController < ApplicationController
 
     #timelineを投稿したユーザとログインユーザが同一でない場合はトップページに戻るTrueを返す
   def user_check
-    unless @timeline.user.id == current_user.id then
+    unless @timeline.user.id == current_user.id
       flash[:notice] = '編集・削除できません'
       redirect_to timelines_path
     end
