@@ -54,7 +54,7 @@ class TimelinesController < ApplicationController
   end
 
   def timeline_params
-    params.require(:timeline).permit(:title, :content, :image, :user_id,:image_cache)
+    params.require(:timeline).permit(:title, :content, :image,:image_cache)
   end
 
     #timelineを投稿したユーザとログインユーザが同一でない場合はトップページに戻るTrueを返す
