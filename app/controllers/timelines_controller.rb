@@ -7,6 +7,7 @@ class TimelinesController < ApplicationController
   end
 
   def show
+    @timeline = Timeline.find(params[:id])
   end
 
   def new
@@ -50,7 +51,7 @@ class TimelinesController < ApplicationController
   private
 
   def set_timeline
-    @timeline = Timeline.find(params[:id])
+    @timeline = current_user.timelines.find(params[:id])
   end
 
   def timeline_params
