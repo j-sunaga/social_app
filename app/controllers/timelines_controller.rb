@@ -4,7 +4,6 @@ class TimelinesController < ApplicationController
 
   def index
     @timelines = Timeline.all.order(created_at: "DESC")
-    @users = User.all
   end
 
   def show
