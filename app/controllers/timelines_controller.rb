@@ -1,5 +1,5 @@
 class TimelinesController < ApplicationController
-  before_action :set_timeline, only: [:show, :edit, :update, :destroy]
+  before_action :set_timeline, only: [:edit, :update, :destroy]
   before_action :user_check, only: [:edit,:update,:destroy]
 
   def index
