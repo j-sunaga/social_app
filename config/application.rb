@@ -17,8 +17,16 @@ module SocialApp
     config.active_record.default_timezone = :local
 
     config.generators do |g|
-     g.assets     false
-     g.helper     false
+      g.assets     false
+      g.helper     false
+      g.test_framework :rspec,
+      fixtures: true,
+      view_specs: false,
+      helper_specs: false,
+      routing_specs: false,
+      controller_specs: false,
+      request_specs: false
+      g.fixture_replacement :factory_bot, dir: "spec/factories"
     end
 
     # Settings in config/environments/* take precedence over those specified here.
