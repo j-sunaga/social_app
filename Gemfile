@@ -33,11 +33,18 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug'
   #Debug
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry-rails'
+
+  gem 'spring'
+  gem 'rspec-rails'
+  gem 'spring-commands-rspec'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'launchy'
 
 end
 
@@ -49,9 +56,10 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '>= 2.15'
+  gem 'capybara', '>= 2.13'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
+  gem 'webdrivers'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
